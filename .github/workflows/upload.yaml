@@ -1,0 +1,41 @@
+---
+name: Upload files to navigatoruf.org
+
+# yamllint disable-line rule:truthy
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  upload:
+    runs-on: self-hosted
+    timeout-minutes: 4
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install lftp
+        run: sudo apt-get install -y lftp sshpass
+
+      - name: Upload files to web server
+        run: |
+          # We need to connect to the server for lftp to be happy, otherwise it
+          # hangs on "Connecting...". Connecting will add the host to
+          # known_hosts.
+          sshpass -p ${{ secrets.MIL_UFL_SFTP_PASS }} \
+            sftp -o StrictHostKeyChecking=no \
+            -P ${{ secrets.MIL_UFL_SFTP_PORT }} mil@mil.ufl.edu << EOF
+          exit
+          EOF
+          lftp -u mil,${{ secrets.MIL_UFL_SFTP_PASS }} \
+            -p ${{ secrets.MIL_UFL_SFTP_PORT }} sftp://mil.ufl.edu << EOF
+          mirror -c \
+          --include='.*' \
+          --exclude='^\..*$' \
+          --exclude='README.md' \
+          -R --parallel --verbose \
+          . \
+          navigatoruf/htdocs
+          exit
+          EOF
