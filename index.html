@@ -1,14 +1,93 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Test Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaviGator AMS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"> <!-- Inter font used in the figma -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
-  <img src="https://play.tailwindcss.com/img/beams.jpg" alt="" class="absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2" width="1308" />
-  <div class="absolute inset-0 bg-[url(https://play.tailwindcss.com/img/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
-  <div class="relative bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">
-    <div class="mx-auto max-w-md">
-      <h1>Check back soon to see our updated website!</h1>
+<body class="bg-gray-300" style="font-family: 'Inter', sans-serif;">
+
+    <!-- Header Section -->
+    <div class="relative">
+        <header class="relative h-[667px] bg-cover bg-center" style="background-image: url('https://i.postimg.cc/Gh1qnj57/Hero-Image.png');">
+            <nav class="absolute top-0 left-0 w-full p-6 flex justify-between items-center bg-opacity-30 bg-white">
+                <div>
+                    <img src="./assets/logo.png" alt="NaviGator AMS Logo" class="h-10">
+                </div>
+                <ul class="flex space-x-6 z-20">
+                    <li><a href="#" class="text-white rounded-md px-1.5 py-1 hover:text-black hover:bg-gray-200 transition-all duration-300">Home</a></li>
+                    <li><a href="#" class="text-white rounded-md px-1.5 py-1 hover:text-black hover:bg-gray-200 transition-all duration-300">Team</a></li>
+                    <li><a href="#" class="text-white rounded-md px-1.5 py-1 hover:text-black hover:bg-gray-200 transition-all duration-300">Vehicle</a></li>
+                    <li><a href="#" class="text-white rounded-md px-1.5 py-1 hover:text-black hover:bg-gray-200 transition-all duration-300">Sponsors</a></li>
+                    <li><a href="#" class="text-white rounded-md px-1.5 py-1 hover:text-black hover:bg-gray-200 transition-all duration-300">Photos</a></li>
+                </ul>
+            </nav>
+
+            <div class="absolute inset-0 flex flex-col justify-center items-center text-white">
+                <h1 class="text-5xl font-bold">NaviGator</h1>
+                <p class="text-2xl mt-2">UF's Autonomous Maritime System</p>
+                <a href="#" class="mt-6 px-6 py-3 bg-gray-200 rounded-full text-black font-light hover:text-white hover:bg-opacity-30 hover:border transition-all duration-300">Learn More</a>
+            </div>
+        </header>
+
+        <!-- This div makes the slanted part between the bg and image section-->
+        <div class="bg-gray-300 h-[71px] relative z-20" style="clip-path: polygon(0% 100%, 100% 0%, 100% 100%, 0% 100%); margin-top: -70px;"></div>
     </div>
-  </div>
-</div>
+
+    <!-- Mission Section -->
+    <section class="py-16 bg-gray-300">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-12 font-light">Our Mission</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Design Card -->
+                <div class="p-6 bg-gray-200 rounded-lg shadow-lg">
+                    <div class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-12 h-12 text-gray-900 mx-auto">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 5l7 14H5z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-medium mb-2">Simple and Elegant Design</h3>
+                    <p class="text-gray-600">Our software utilizes ROS, open source software that allows for quick, modular, and distributed design; our powerful simulator uses Gazebo, and facilitates testing of all algorithms prior to deployment on the physical system.</p>
+                </div>
+
+                <!-- Infrastructure Card -->
+                <div class="p-6 bg-gray-200 rounded-lg shadow-lg">
+                    <div class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-12 h-12 text-gray-900 mx-auto">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 12l9 4.5V9l-9-4.5L3 9v7.5l9-4.5z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-medium mb-2">Robust Infrastructure</h3>
+                    <p class="text-gray-600">NaviGator has multiple redundant systems, a strong and readily adaptable mechanical system (including both passive and active electronic cool components), several commercial off-the-shelf technology devices, many UF student-designed circuit boards, and rigorously simulated and tested software systems.</p>
+                </div>
+
+                <!-- Software Card -->
+                <div class="p-6 bg-gray-200 rounded-lg shadow-lg">
+                    <div class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-12 h-12 text-gray-900 mx-auto">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M7 17a4 4 0 010-8h10a4 4 0 010 8H7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-medium mb-2">Extensively Tested Software</h3>
+                    <p class="text-gray-600">With over 250 hours of in-water testing, over 2000 hours of simulated testing, and a robust codebase reforged in the fires of Virtual RobotX 2022, NaviGator AMS is ready for the 2022 RobotX competition.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 bg-gray-300">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl font-bold font-light mb-6 text-left px-10">About Us</h2>
+            <p class="text-gray-600 mb-6 text-left px-10">NaviGator AMS is a set of maritime vehicles built by students in the Machine Intelligence Laboratory (MIL) at the University of Florida (UF) for the 2016 Maritime RobotX competition.</p>
+            <p class="text-gray-600 text-left px-10">The main autonomous vehicle that constitutes the NaviGator AMS project is built upon a WAM-V boat. Other maritime systems will also be utilized for this project.</p>
+            <p class="text-gray-600 mt-4 text-left px-10">We will be competing at the upcoming RobotX competition in Sarasota 2024!</p>
+        </div>
+    </section>
+
+</body>
+</html>
