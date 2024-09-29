@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaviGator AMS</title>
+    <meta content="NaviGator AMS" property="og:title" />
+    <meta content="NaviGator AMS is a set of maritime vehicles built by students in the Machine Intelligence Laboratory (MIL) at the University of Florida (UF) for the Maritime RobotX competition." property="og:description" />
+    <meta content="https://navigatoruf.org" property="og:url" />
+    <meta content="https://navigatoruf.org/assets/hawaii_resting.jpg" property="og:image" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta content="#FA4616" data-react-helmet="true" name="theme-color" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"> <!-- Inter font used in the figma -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-300" style="font-family: 'Inter', sans-serif;">
+
+    <!-- Header Section -->
+    <div class="relative">
+        <header class="relative h-[500px] bg-cover bg-center" style="background-image: url('./assets/hawaii_resting.jpg'); ; background-color: rgba(0, 0, 0, 0.5); background-blend-mode: darken;">
+            <nav class="absolute top-0 left-0 w-full p-6 flex justify-between items-center; background-color: rgba(0, 0, 0, 0.5); background-blend-mode: darken;">
+                <div>
+                    <img src="./assets/logo.png" alt="NaviGator AMS Logo" class="h-10">
+                </div>
+                <ul class="flex space-x-6 z-20">
+                    <li><a href="#" class="text-white rounded-md px-1.5 py-1 hover:text-black hover:bg-gray-200 transition-all duration-300">Home</a></li>
+                    <li><a href="#" class="text-white rounded-md px-1.5 py-1 hover:text-black hover:bg-gray-200 transition-all duration-300">Team</a></li>
+                    <li><a href="#" class="text-white rounded-md px-1.5 py-1 hover:text-black hover:bg-gray-200 transition-all duration-300">Vehicle</a></li>
+                    <li><a href="#" class="text-white rounded-md px-1.5 py-1 hover:text-black hover:bg-gray-200 transition-all duration-300">Sponsors</a></li>
+                    <li><a href="#" class="text-white rounded-md px-1.5 py-1 hover:text-black hover:bg-gray-200 transition-all duration-300">Photos</a></li>
+                </ul>
+            </nav>
+
+            <div class="absolute inset-0 flex flex-col justify-center items-center text-white">
+                <h1 class="text-7xl font-bold">Our Design</h1>
+            </div>
+        </header>
+
+    <!-- Main Vehicle Section -->
+    <section class="py-20 bg-gray-300">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="grid place-items-center text-left"> <!-- Navigator V2024  Title-->
+                <div class="max-w-56">                
+                    <h2 class="text-5xl font-light">NaviGator</h2>
+                    <h2 class="text-xl text-gray-500 mb-5 font-light" style="margin-top: -10px;">V2024</h2>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-6xl mx-auto text-center grid place-items-center mx-8">
+                <!-- Main Vehicle Card -->
+                <div class="p-6 bg-gray-200 rounded-lg shadow-lg" style="position: relative">
+                    <div class="mb-4 grid place-items-center">
+                        <img src="./assets/navigator_cropped_2024.png" alt="Team Photo" class="max-w-5xl w-full rounded-lg">
+                    </div>
+                    <!-- Lines -->
+                    <svg width="100%" height="100%" style="position: absolute; top: 0; left: 0; pointer-events: none;" id="lines">
+                        <!-- Lines go from infobox to part of boat -->
+                        <line id="line1" x1="290" y1="50" x2="360" y2="190" stroke="gray" stroke-width="10" class="hidden-line"/>
+                        <line id="line2" x1="205" y1="213" x2="417" y2="216" stroke="gray" stroke-width="10" class="hidden-line"/>
+                        <line id="line3" x1="773" y1="50" x2="501" y2="97" stroke="gray" stroke-width="10" class="hidden-line"/>
+                        <line id="line4" x1="860" y1="216" x2="506" y2="134" stroke="gray" stroke-width="10" class="hidden-line"/>
+                        <line id="line5a" x1="106" y1="620" x2="181" y2="442" stroke="gray" stroke-width="10" class="hidden-line"/>
+                        <line id="line5b" x1="260" y1="653" x2="502" y2="489" stroke="gray" stroke-width="10" class="hidden-line"/>
+                        <line id="line6" x1="810" y1="620" x2="560" y2="222" stroke="gray" stroke-width="10" class="hidden-line"/>
+                    </svg>
+                    <!-- InfoBoxes -->
+                    <style>                        
+                        .info-box {
+                            color: white; 
+                            font-size: 1.75rem;
+                            background-color: #6B7280;
+                            border-radius: 1rem;
+                            width: 20rem;
+                            height: 6rem;
+                            position: absolute;
+                            display: grid;
+                            place-items: center;
+                            transition: all 0.3s ease-in-out;
+                            overflow: hidden; 
+                        }
+                        .info-box:hover {
+                            height: 12rem;
+                            background-color: #4B5563;
+                        }
+                        .info-blurb {
+                            display: none;
+                            font-size: 1rem;
+                        }
+                        .info-box:hover .info-blurb {
+                            display: block;
+                        }
+                    </style>
+                    <!-- They are out of order because they need to display on top of each other in the correct order 🤡 -->
+                    <div class="info-box hover-line" data-line="line2" style="top: 20%; left: -10%">
+                        Racquetball Launcher                        
+                        <div class="info-blurb">NaviGator is equipped with a Racquetball Launcher as part of the 2024 Dock and Deliver task.</div>
+                    </div>
+                    <div class="info-box hover-line" data-line="line1" style="top: -2%; left: -2%">
+                        Electronics Box                        
+                        <div class="info-blurb">Contains electronics?</div>
+                    </div>                    
+                    <div class="info-box hover-line" data-line="line4" style="top: 20%; left: 80%;">
+                        Velodyne LIDAR                        
+                        <div class="info-blurb">Our new Velodyne LIDAR sensor allows NaviGator to perceive the distance of obstacles. Like RADAR but with light.</div>
+                    </div>
+                    <div class="info-box hover-line" data-line="line3" style="top: -2%; left: 72%;">
+                        GPS Antenna                        
+                        <div class="info-blurb">TBA.</div>
+                    </div>
+                    <div class="info-box hover-line" data-line="line5" style="top: 88%; left: -2%">
+                        Propulsion Systems                        
+                        <div class="info-blurb">NaviGator contains 2 stern thrusters and 2 bow thrusters, ready to speed us through all 8 tasks!</div>
+                    </div>
+                    <div class="info-box hover-line" data-line="line6" style="top: 88%; left: 72%">
+                        Stereo Camera
+                        <div class="info-blurb">Just as you have 2 eyes, NaviGator has 2 linked cameras, giving it unparalleled depth perception.</div>
+                    </div>
+                </div>
+                <script>
+                    // This function shows
+                    document.querySelectorAll('.hover-line').forEach((box) => {
+                        const lineId = box.getAttribute('data-line');
+                        if(lineId == "line5"){
+                            // Special case cause line5 has 2 lines
+                            const lineA = document.getElementById("line5a");
+                            const lineB = document.getElementById("line5b");
+                            box.addEventListener('mouseenter', () => {
+                                lineA.classList.remove('hidden-line');
+                                lineB.classList.remove('hidden-line');
+                            });
+                            box.addEventListener('mouseleave', () => {
+                                lineA.classList.add('hidden-line');
+                                lineB.classList.add('hidden-line');
+                            });
+                            return;
+                        }
+                        const line = document.getElementById(lineId);
+                        box.addEventListener('mouseenter', () => {
+                            line.classList.remove('hidden-line');
+                        });
+                        box.addEventListener('mouseleave', () => {
+                            line.classList.add('hidden-line');
+                        });
+                    });
+                </script>                
+                <style>
+                    .hidden-line {
+                        visibility: hidden;
+                    }
+                    line:not(.hidden-line) {
+                        visibility: visible;
+                    }
+                </style>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-8 bg-gray-300">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl font-bold font-light mb-6 text-left px-10">How We Built Navigator</h2>
+            <p class="text-gray-600 mb-6 text-left px-10">Lorem ipsum doloret.</p>
+        </div>
+    </section>
+</body>
+</html>
