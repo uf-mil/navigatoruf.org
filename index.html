@@ -17,24 +17,37 @@
 
     <!-- Header Section -->
     <div class="relative">
+
         <header class="relative h-[667px] bg-cover bg-center" style="background-image: url('./assets/hawaii_resting.jpg');">
             <nav class="absolute top-0 left-0 w-full p-6 flex justify-between items-center bg-opacity-30 bg-white">
+=======
+        <header class="relative h-[667px] bg-cover bg-center" style="background-image: url('./assets/hawaii_resting.jpg'); ; background-color: rgba(0, 0, 0, 0.5); background-blend-mode: darken;"">
+            <nav class="absolute top-0 left-0 w-full p-6 flex justify-between items-center">
+
                 <div>
                     <img src="./assets/logo.png" alt="NaviGator AMS Logo" class="h-10">
                 </div>
                 <ul class="flex space-x-6 z-20">
+
                     <li><a href="#" class="text-black rounded-md px-1.5 py-1 hover:text-black hover:bg-gray-200 transition-all duration-300">Home</a></li>
                     <li><a href="#" class="text-black rounded-md px-1.5 py-1 hover:text-black hover:bg-gray-200 transition-all duration-300">Team</a></li>
                     <li><a href="#" class="text-black rounded-md px-1.5 py-1 hover:text-black hover:bg-gray-200 transition-all duration-300">Vehicle</a></li>
                     <li><a href="#" class="text-black rounded-md px-1.5 py-1 hover:text-black hover:bg-gray-200 transition-all duration-300">Sponsors</a></li>
                     <li><a href="#" class="text-black rounded-md px-1.5 py-1 hover:text-black hover:bg-gray-200 transition-all duration-300">Photos</a></li>
+=======
+                    <li><a href=#"" class="text-white rounded-md px-1.5 py-1 hover:text-black hover:bg-gray-200 transition-all duration-300">Home</a></li>
+                    <li><a href="team.html" class="text-white rounded-md px-1.5 py-1 hover:text-black hover:bg-gray-200 transition-all duration-300">Team</a></li>
+                    <li><a href="vehicle.html" class="text-white rounded-md px-1.5 py-1 hover:text-black hover:bg-gray-200 transition-all duration-300">Vehicle</a></li>
+                    <li><a href="sponsors.html" class="text-white rounded-md px-1.5 py-1 hover:text-black hover:bg-gray-200 transition-all duration-300">Sponsors</a></li>
+                    <li><a href="photos.html" class="text-white rounded-md px-1.5 py-1 hover:text-black hover:bg-gray-200 transition-all duration-300">Photos</a></li>
+
                 </ul>
             </nav>
 
             <div class="absolute inset-0 flex flex-col justify-center items-center text-white">
-                <h1 class="text-5xl font-bold">NaviGator</h1>
+                <h1 class="text-7xl font-bold">NaviGator</h1>
                 <p class="text-2xl mt-2">UF's Autonomous Maritime System</p>
-                <a href="#" class="mt-6 px-6 py-3 bg-gray-200 rounded-full text-black font-light hover:text-white hover:bg-opacity-30 hover:border transition-all duration-300">Learn More</a>
+                <a href="vehicle.html" class="mt-6 px-6 py-3 bg-gray-200 rounded-full text-black font-light hover:text-white hover:bg-opacity-30 hover:border transition-all duration-300">Learn More</a>
             </div>
         </header>
 
@@ -43,7 +56,7 @@
     </div>
 
     <!-- Mission Section -->
-    <section class="py-16 bg-gray-300">
+    <section class="py-8 bg-gray-300">
         <div class="max-w-6xl mx-auto text-center">
             <h2 class="text-3xl font-bold mb-12 font-light">Our Mission</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -86,7 +99,7 @@
     </section>
 
     <!-- About Section -->
-    <section class="py-16 bg-gray-300">
+    <section class="py-8 bg-gray-300">
         <div class="max-w-6xl mx-auto text-center">
             <h2 class="text-3xl font-bold font-light mb-6 text-left px-10">About Us</h2>
             <p class="text-gray-600 mb-6 text-left px-10">NaviGator AMS is a set of maritime vehicles built by students in the Machine Intelligence Laboratory (MIL) at the University of Florida (UF) for the Maritime RobotX competition.</p>
@@ -95,5 +108,25 @@
         </div>
     </section>
 
+    <!-- Video Section -->
+    <section class="py-8 bg-gray-300">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold font-light mb-6 text-left px-10">Watch our Journey</h2>
+            <p class="text-gray-600 text-left px-10 mb-6">This video was made for the 2022 RobotX competition!</p>
+            <div class="flex justify-center">
+                <iframe class="max-w-5xl w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/gQAfHJL4BPw"></iframe>
+            </div>
+        </div>
+
+    <!-- Team Section -->
+    <section class="py-8 bg-gray-300">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl font-bold font-light mb-6 text-left px-10">Meet the Team</h2>
+            <p class="text-gray-600 text-left px-10 mb-6">Our team is composed of students from various disciplines at the University of Florida. We are a group of passionate individuals who are dedicated to the development of autonomous maritime systems.</p>
+            <div class="flex justify-center">
+                <img src="./assets/robotx_2022_team_1.jpg" alt="Team Photo" class="max-w-5xl w-full rounded-lg">
+            </div>
+        </div>
+    </section>
 </body>
 </html>
