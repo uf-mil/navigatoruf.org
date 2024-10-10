@@ -22,12 +22,8 @@ module.exports = {
           loader: 'babel-loader'
       },
       {
-          test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
-          loader: 'url-loader',
-          options: {
-            limit: 10000,
-            name: 'assets/[name].[hash].[ext]',
-          },
+          test: /\.(png|jpeg|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+          type: 'asset/inline',
       },
       ]
   },

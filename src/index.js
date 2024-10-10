@@ -7,7 +7,8 @@ import {
 import { createRoot } from "react-dom/client";
 
 import LandingPage from './pages/Landing';
-// import TeamPage from './pages/Team';
+import ErrorPage from './pages/NotFound';
+import TeamPage from './pages/Team';
 // import VehiclePage from './pages/Vehicle';
 // import SponsorsPage from './pages/Sponsors';
 // import PhotosPage from './pages/Photos';
@@ -17,11 +18,12 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <LandingPage />,
+    errorElement: <ErrorPage />,
   },
-  // {
-  //   path: "/team",
-  //   element: <TeamPage />,
-  // },
+  {
+    path: "/team",
+    element: <TeamPage />,
+  },
   // {
   //   path: "/vehicle",
   //   element: <VehiclePage />,

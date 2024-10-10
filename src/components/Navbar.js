@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import logo from '../assets/logo.png';
+
 function Navbar() {
   return (
-    <nav className="w-full p-6 flex justify-between items-center bg-gray-800">
+    <nav className="w-full p-6 flex justify-between items-center">
       <div>
-        <img src="logo.png" alt="NaviGator AMS Logo" className="h-10" />
+        <img src={logo} alt="NaviGator AMS Logo" className="h-10" />
       </div>
       <ul className="flex space-x-6">
         <li><Link to="/" className="text-white">Home</Link></li>
