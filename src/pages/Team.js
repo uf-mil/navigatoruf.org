@@ -30,56 +30,16 @@ function Header() {
 
 const Leadership = () => {
   const members = [
-    {
-      image: memberImages["cameron.jpeg"],
-      name: "Cameron Brown",
-      role: "Team Lead",
-    },
-    {
-      image: memberImages["lorant.png"],
-      name: "Lorant Domokos",
-      role: "Mechanical Lead",
-    },
-    {
-      image: memberImages["daniel.jpeg"],
-      name: "Daniel Parra",
-      role: "Software Lead",
-    },
-    {
-      image: memberImages["adrian.png"],
-      name: "Adrian Fernandez",
-      role: "Electrical Lead",
-    },
-    {
-      image: memberImages["adam_h.png"],
-      name: "Adam Hamdan",
-      role: "Mechanical Lead, Operations",
-    },
-    {
-      image: memberImages["keith.jpeg"],
-      name: "Keith Khadar",
-      role: "Software Lead",
-    },
-    {
-      image: memberImages["kayleigh.jpg"],
-      name: "Kayleigh Beron",
-      role: "Electrical Lead, Operations",
-    },
-    {
-      image: memberImages["adam_m.jpeg"],
-      name: "Adam McAleer",
-      role: "Mechanical Lead, Mechanisms",
-    },
-    {
-      image: memberImages["andrew.png"],
-      name: "Andrew Knee",
-      role: "Software Lead",
-    },
-    {
-      image: memberImages["lester.jpg"],
-      name: "Lester Bonilla",
-      role: "Drone Lead",
-    },
+    { image: memberImages["cameron.jpeg"], name: 'Cameron Brown', role: 'Team Lead' },
+    { image: memberImages["lorant.png"], name: 'Lorant Domokos', role: 'Mechanical Lead' },
+    { image: memberImages["daniel.jpeg"], name: 'Daniel Parra', role: 'Software Lead' },
+    { image: memberImages["adrian.png"], name: 'Adrian Fernandez', role: 'Electrical Lead' },
+    { image: memberImages["adam_h.png"], name: 'Adam Hamdan', role: 'Mechanical Lead, Operations' },
+    { image: memberImages["keith.jpeg"], name: 'Keith Khadar', role: 'Software Lead' },
+    { image: memberImages["kayleigh.jpg"], name: 'Kayleigh Beron', role: 'Electrical Lead, Operations' },
+    { image: memberImages["adam_m.jpeg"], name: 'Adam McAleer', role: 'Mechanical Lead, Mechanisms' },
+    { image: memberImages["andrew.png"], name: 'Andrew Knee', role: 'Software Lead' },
+    { image: memberImages["lester.jpg"], name: 'Lester Bonilla', role: 'Drone Lead' },
   ];
 
   return (

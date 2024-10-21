@@ -9,7 +9,7 @@ import { createRoot } from "react-dom/client";
 import LandingPage from './pages/Landing';
 import ErrorPage from './pages/NotFound';
 import TeamPage from './pages/Team';
-// import VehiclePage from './pages/Vehicle';
+import VehiclePage from './pages/Vehicle';
 // import SponsorsPage from './pages/Sponsors';
 // import PhotosPage from './pages/Photos';
 // import NotFoundPage from './pages/NotFound';
@@ -24,10 +24,10 @@ const router = createBrowserRouter([
     path: "/team",
     element: <TeamPage />,
   },
-  // {
-  //   path: "/vehicle",
-  //   element: <VehiclePage />,
-  // },
+  {
+    path: "/vehicle",
+    element: <VehiclePage />,
+  },
   // {
   //   path: "/sponsors",
   //   element: <SponsorsPage />,
