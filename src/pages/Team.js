@@ -1,32 +1,10 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import Header from "../components/Header";
 
 import MemberCard from "../components/MemberCard";
 
-import background from "../assets/hawaii_resting.jpg";
-import teamPhoto from "../assets/robotx_2022_team_1.jpg";
-
 import memberImages from "../assets/members";
 import advisorImages from "../assets/advisors";
-
-function Header() {
-  return (
-    <header
-      className="relative h-[667px] bg-cover bg-center"
-      style={{
-        backgroundImage: `url('${background}')`,
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
-        backgroundBlendMode: "darken",
-      }}
-    >
-      <Navbar />
-      <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
-        <h1 className="text-7xl font-bold">Meet the Team</h1>
-        <h2 className="text-3xl font-bold">2024 Season</h2>
-      </div>
-    </header>
-  );
-}
 
 const Leadership = () => {
   const members = [
@@ -86,7 +64,7 @@ const TeamPage = () => {
   return (
     <div className="bg-gray-300" style={{ fontFamily: "Inter, sans-serif" }}>
       <div className="relative">
-        <Header />
+        <Header title="Meet the Team" subTitle="2024 Season"/>
       </div>
       <Leadership />
       <Advisors />

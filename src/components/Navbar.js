@@ -1,7 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import logo from '../assets/logo.png';
+
+const NavItem = ({ to, label }) => {
+  return (
+    <NavLink 
+      to={to} 
+      className="text-white px-4 py-2 rounded transition duration-300 hover:bg-white hover:text-black"
+    >
+      {label}
+    </NavLink>
+  );
+};
 
 function Navbar() {
   return (
@@ -10,11 +21,11 @@ function Navbar() {
         <img src={logo} alt="NaviGator AMS Logo" className="h-10" />
       </div>
       <ul className="flex space-x-6">
-        <li><Link to="/" className="text-white">Home</Link></li>
-        <li><Link to="/team" className="text-white">Team</Link></li>
-        <li><Link to="/vehicle" className="text-white">Vehicle</Link></li>
-        <li><Link to="/sponsors" className="text-white">Sponsors</Link></li>
-        <li><Link to="/photos" className="text-white">Photos</Link></li>
+        <NavItem to="/" label="Home" />
+        <NavItem to="/team" label="Team" />
+        <NavItem to="/vehicle" label="Vehicle" />
+        <NavItem to="/sponsors" label="Sponsors" />
+        <NavItem to="/photos" label="Photos" />
       </ul>
     </nav>
   );

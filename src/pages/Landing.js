@@ -7,7 +7,9 @@ import teamPhoto from '../assets/robotx_2022_team_1.jpg';
 function Header() {
   return (
     <header className="relative h-[667px] bg-cover bg-center" style={{ backgroundImage: `url('${background}')`, backgroundColor: 'rgba(0, 0, 0, 0.5)', backgroundBlendMode: 'darken' }}>
-      <Navbar />
+      <div className="relative z-10">
+        <Navbar />
+      </div>
       <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
         <h1 className="text-7xl font-bold">NaviGator</h1>
         <p className="text-2xl mt-2">UF's Autonomous Maritime System</p>
@@ -17,6 +19,7 @@ function Header() {
   );
 }
 
+// Mission Component
 function Mission() {
   return (
     <section className="py-8 bg-gray-300">
@@ -56,6 +59,7 @@ function Mission() {
   );
 }
 
+// About Component
 function About() {
   return (
     <section className="py-8 bg-gray-300">

@@ -1,25 +1,5 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-
-import background from "../assets/hawaii_resting.jpg";
-
-function Header() {
-  return (
-    <header
-      className="relative h-[667px] bg-cover bg-center"
-      style={{
-        backgroundImage: `url('${background}')`,
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
-        backgroundBlendMode: "darken",
-      }}
-    >
-      <Navbar />
-      <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
-        <h1 className="text-7xl font-bold">Sponsors</h1>
-      </div>
-    </header>
-  );
-}
+import Header from "../components/Header";
 
 const SponsorSection = ({ title, sponsors, bgColor }) => {
   return (
@@ -220,7 +200,7 @@ const SponsorsPage = () => {
   return (
     <div className="bg-gray-300" style={{ fontFamily: "Inter, sans-serif" }}>
       <div className="relative">
-        <Header />
+        <Header title="Sponsors" />
       </div>
       <SponsorSection
         title="Diamond Sponsors"

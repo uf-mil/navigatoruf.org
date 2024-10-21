@@ -1,9 +1,8 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import Header from "../components/Header";
 
 import MemberCard from "../components/MemberCard";
 
-import background from "../assets/hawaii_resting.jpg";
 import cropped from "../assets/navigator_cropped_2024.png";
 
 import settingsLogo from "../assets/settings.png";
@@ -12,24 +11,6 @@ import circuitLogo from "../assets/circuit.png";
 
 import vrx2023 from "../assets/vrx-2023.jpg";
 import testingVan from "../assets/testing_fbi_van.jpg";
-
-function Header() {
-  return (
-    <header
-      className="relative h-[667px] bg-cover bg-center"
-      style={{
-        backgroundImage: `url('${background}')`,
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
-        backgroundBlendMode: "darken",
-      }}
-    >
-      <Navbar />
-      <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
-        <h1 className="text-7xl font-bold">Our Design</h1>
-      </div>
-    </header>
-  );
-};
 
 const NaviGatorHeader = () => {
   return (
@@ -379,7 +360,7 @@ const VehiclePage = () => {
   return (
   <div className="bg-gray-300" style={{ fontFamily: "Inter, sans-serif" }}>
     <div className="relative">
-      <Header />
+      <Header title="Vehicle" />
     </div>
     <section className="pt-20 pb-5 bg-gray-300">
       <NaviGatorHeader />

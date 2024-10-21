@@ -2,7 +2,8 @@ import React from 'react';
 import {
   createHashRouter,
   createBrowserRouter,
-  RouterProvider
+  RouterProvider,
+  Link
 } from 'react-router-dom';
 import { createRoot } from "react-dom/client";
 
@@ -11,8 +12,9 @@ import ErrorPage from './pages/NotFound';
 import TeamPage from './pages/Team';
 import VehiclePage from './pages/Vehicle';
 import SponsorsPage from './pages/Sponsors';
-// import PhotosPage from './pages/Photos';
-// import NotFoundPage from './pages/NotFound';
+import PhotosPage from './pages/Photos';
+
+import Navbar from "./components/Navbar.js";
 
 const router = createBrowserRouter([
   {
@@ -32,14 +34,12 @@ const router = createBrowserRouter([
     path: "/sponsors",
     element: <SponsorsPage />,
   },
-  // {
-  //   path: "/photos",
-  //   element: <PhotosPage />,
-  // },
+  {
+    path: "/photos",
+    element: <PhotosPage />,
+  },
 ], {
 });
-
-console.log("test");
 
 createRoot(document.getElementById("root")).render(
   <RouterProvider router={router} />
