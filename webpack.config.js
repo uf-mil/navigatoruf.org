@@ -23,9 +23,8 @@ module.exports = {
       },
       {
           test: /\.(png|jpeg|jpg|gif|svg|eot|ttf|woff|woff2)$/,
-          type: 'asset/inline',
-      },
-      ]
+          type: 'asset',
+      }],
   },
   devServer: {
     historyApiFallback: true,
