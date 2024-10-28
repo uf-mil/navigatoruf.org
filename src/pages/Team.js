@@ -25,7 +25,9 @@ const Leadership = () => {
       graduationYear: "Spring 2025",
       linkedIn: "lorant-domokos-849094244",
     },
-    { image: memberImages["daniel.jpeg"], name: "Daniel Parra",
+    {
+      image: memberImages["daniel.jpeg"], 
+      name: "Daniel Parra",
       role: "Software Lead",
       degree: "BS, Computer Science",
       graduationYear: "Spring 2026",
@@ -154,6 +156,142 @@ const Advisors = () => {
   );
 };
 
+const TravellingMembers = () => {
+  const travellingMembers = [
+    {
+      image: memberImages["alex.png"],
+      name: "Alex Johnson",
+      role: "Software Member",
+      degree: "BS, Computer Science",
+      graduationYear: "Spring 2025",
+      linkedIn: "alexojohnson",
+    },
+    {
+      image: memberImages["sophie.png"],
+      name: "Sophie Lanahan",
+      role: "Mechanical Member",
+      degree: "BS, Mechanical Engineering",
+      graduationYear: "Fall 2026",
+      linkedIn: "sophie-lanahan-9b2440325",
+    },
+    {
+      image: memberImages["gabe.jpeg"],
+      name: "Gabriel Wagner",
+      role: "Mechanical Member",
+      degree: "BS, Mechanical Engineering",
+      graduationYear: "Spring 2026",
+      linkedIn: "gabriel-reyes-wagner",
+    },
+    {
+      image: memberImages["dominik.png"],
+      name: "Dominik Kapuscinski",
+      role: "Electrical Member",
+      degree: "BS, Computer Engineering",
+      graduationYear: "Spring 2025",
+      linkedIn: "dominik-kapuscinski",
+    },
+    {
+      image: memberImages["jack.png"],
+      name: "Jack Rainville",
+      role: "Electrical Member",
+      degree: "BS, Electrical Engineering",
+      graduationYear: "Spring 2027",
+      linkedIn: "jack-rainville", 
+    },
+  ];
+
+  return (
+    <section className="max-w-6xl mx-auto pb-16 bg-gray-300">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl font-bold mb-10">Travelling Members</h2>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+        {travellingMembers.map((member, index) => (
+          <MemberCard
+            key={index}
+            image={member.image}
+            name={member.name}
+            role={member.role}
+            degree={member.degree}
+            graduationYear={member.graduationYear}
+            linkedIn={member.linkedIn}
+            website={member.website}
+          />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+const TeamList = () => {
+  const teams = [
+    {
+      name: 'Mechanical Team',
+      members: [
+        'Ryan Hoburg',
+        'Will MacGuire',
+        'Cade Sachs',
+        'Joshua Valencia',
+        'Diego Dominguez',
+        'Blake Cobo',
+        'Findlay Watson',
+        'Harin Patel',
+      ]
+    },
+    {
+      name: 'Software Team',
+      members: [
+          'Carlos Chavez',
+          'Javier Irizarry-Delgado',
+          'Mohana Pamidimukkala',
+          'Edward Guthrie',
+          'Max Vu',
+          'Lynette Hemingway',
+          'Joshua Labasbas',
+          'William Zhu',
+          'Thomas Canro',
+          'Charles Pratt',
+          'Tanushree Hadavale',
+          'Alexander Wang',
+          'Anthony Liao',
+          'Marcin Plaza',
+          'Danush Singla',
+          'Joshua Thomas',
+      ]
+    },
+    {
+      name: 'Electrical Team',
+      members: [
+        'Joseph Goodman',
+        'Enoch Wang',
+        'Joshua Arroyo',
+        'Szander Brenner',
+        'Sanat Konda',
+        'Peter Van Kirk',
+      ]
+    }
+  ];
+  return (
+    <section className="max-w-6xl mx-auto pb-8">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl font-bold mb-10">Members</h2>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {teams.map((team, index) => (
+          <div key={index} className="bg-white p-4 rounded-lg shadow-lg text-center">
+            <h3 className="text-xl font-bold mb-3">{team.name}</h3>
+            <div className="space-y-1">
+              {team.members.map((member, idx) => (
+                <p key={idx} className="text-gray-700">{member}</p>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 const TeamPage = () => {
   return (
     <div className="bg-gray-300" style={{ fontFamily: "Inter, sans-serif" }}>
@@ -162,6 +300,8 @@ const TeamPage = () => {
       </div>
       <Leadership />
       <Advisors />
+      <TravellingMembers />
+      <TeamList />
     </div>
   );
 };
