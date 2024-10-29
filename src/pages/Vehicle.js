@@ -318,36 +318,66 @@ const Timeline = () => {
           />
           
           <TimelineItem 
-            date="September 9th 2024" 
+            date="September 9th, 2024" 
             title="Testing Log 1: Initial Assembly and Lake Testing" 
             description="With the RobotX 2024 competition no more than 2 months away we decided we needed to start testing now. On September 9th 2024 we embarked on the first testing session of the new school year! In the morning, we finished assembling the boat, including mechanically mounting several sensors and the computer box, securing electrical connections inside the computer box, and distributing outbound wires from the computer box to their respective sensors/actuators. Around 1, we wheeled NaviGator outside and hitched it to the ECE truck. We successfully drove it to Lake Wauburg and backed it down the driveway to the boat ramp. We deployed it, and after working through some computer issues, got the boat to move using odometry and the path planner. We will be testing next Sunday. This week, we aim to finish code for several missions, add further reliability to our software systems, work on new electrical boards for the light tower and RF kill, and build props used for testing missions in the water."
           />
           
           <TimelineItem 
-            date="September 15th 2024" 
+            date="September 15th, 2024" 
             title="Testing Log 2: Buoy Detection and Cooling Issues" 
             description="We hit the road pretty early yesteday for testing, and brought the CIMAR trailer with us with the help of some MAE faculty, Daniel Preston! This allowed us to bring our buoy props in attempt to do the demonstration task that qualifies us for the competition. After some tinkering (we forgot to turn on one of the batteries), we were able to test the mission, and found out that while object detection is working pretty well, the trajectory planner needs some work, as does the CV model. We were able to consistently detect buoys, but they were not always indexed correctly. The boat also station kept very well! The final issue was that the computer was overheating in the container, so we are switching to a water-cooled solution. We will have some smaller scale testing this week on Wednesday, where we plan on taking just the boat and figuring out some of the path planning. Next big testing is on Sunday, 9/22, and the goal is to fix the software issues, have more mechanical props, watercool the computer, and investigate some electrical components on the boat itself."
           />
           
           <TimelineItem 
-            date="September 22nd 2024" 
+            date="September 22nd, 2024" 
             title="Testing Log 3: Trajectory Planning and Camera Data Collection" 
             description="Testing yesterday was longggg but we made some good progress and have found the next things we want to work on. The boat can now be controlled using a controller from shore, which was pretty fun to drive. We got camera data of the green spherical buoy as well as the black vertical buoy for two of the competition tasks. We also checked PID, and it had some pretty good performance, with a maximum of about 0.9 meters of pose error at any given time. Station keeping was incredibly accurate! We were also able to test the Zigbys for the remote kill, which electrical will continue to lab out this week. Software is going to be working on managing enemies and the trajectory planner in the coming week. The water-cooling components came in today, Monday, and so the goal is to have the computer cooled better by next sunday, as well as gathering data of the light tower while we are there. Trajectory planning is also a long term goal that we would like to iron out over the next few testing sessions. The ball launcher and drone are also coming along and we hope to test them this week!
 "
           />
           
           <TimelineItem 
-            date="September 29th 2024" 
+            date="September 29th, 2024" 
             title="Testing Log 4: Enemy Filtering and Wildlife Mission Testing" 
             description="Unfortunately due to the hurricane and its impact on Florida, Lake Wauburg (our usual testing site) was without power today and therefore closed. After working together to find some other lakes to test in, we settled on a lake in Marion County named Orange Lake. After configuring the LIDAR bounds to work at the new lake, we got started with testing. The enemy filter (aka, filtering out non-useful LIDAR points in front of the boat) worked better, but we were still encountering a lot of issues with the LIDAR and the underwater weeds, which rose near the surface of the lake. We think that the changes to the LIDAR filter will work at Wauburg, where the weeds aren't as high and the light is the main deterrent in getting an accurate object map of the environment. Nonetheless, we recorded some data to analyze later, to try to further improve the filtering of the LIDAR. We also briefly tested the wildlife mission, and found some ways to improve it. Thanks to everyone who came!"
             imageSrc={testingVan} 
             imageAlt="NaviGator AMS Logo"
           />
+
+          <TimelineItem 
+            date="October 2nd, 2024" 
+            title="Testing Log 5: LIDAR and Path Planning" 
+            description="Testing today was good! We showed up at Wauburg right at 12, and left right at 6. Today, we fixed the enemies issue by implementing a secondary point cloud filter to filter out low intensity points. Often times, light reflecting on the surface of the water would be relatively low intensity, so this filter worked great (the red points in the filter are the light reflecting off the surface of the water at the LIDAR, which are filtered out/not collected into a box, like the rainbow points and box representing a kayak). We collected some more image data, and investigated the path planner and PID controller a little bit. The boat is oscillating back and forth quite a bit when trying to align itself with a goal sometimes, which will make some complicated movements harder. We also worked on the bounds, and tested the blind path planner (which worked more consistently). Also, daniel and i fell in the water lol"
+          />
+
+          <TimelineItem 
+            date="October 13th, 2024" 
+            title="Testing Log 6: Controls Tuning" 
+            description="Testing today went well! We started by investigating the oscillations that sometimes appeared when attempting to move the boat to a certain point. We tried adjusting PID gains in the controller, disabling the path planner (to test the controller by itself), and reading the source code, but no significant improvements were made. We gave up, and decided that stopping the movement after a certain number of seconds worked okay for today, but we hope to write a permanent solution that stops the path planner from generating new paths once the target region is reached. We then moved onto missions, and were able to demonstrate the wildlife mission, the demonstration mission, and part of the entrance/exit gate mission (we had to pull because of low battery voltage)."
+          />
+
+          <TimelineItem 
+            date="October 16th, 2024" 
+            title="Testing Log 7: Path Planning" 
+            description="Testing today was good. We investigated the path planner and controller more, and found that increasing the path planner's tolerance did help to prevent it from too many paths to get to a particular point. We also have very strong evidence that the back left thruster is moving slower than other thrusters, meaning we will need to replace it. When attempting to move forward, the back left side of the boat is lagging behind, causing movements to be inaccurate. Furthermore, the computer did throttle several times because of high temperatures, which we believe is slowing down the controller, making it harder for the boat to follow the provided trajectory accurately. We also found that some lighting conditions would cause our vision model to not recognize colored buoys appropriately, meaning we will need to train our buoys model further."
+          />
+
+          <TimelineItem 
+            date="October 20th, 2024" 
+            title="Testing Log 8: Positioning Enhancements"
+            description="We began today by finishing up the new water cooling loop inside NaviGator and by replacing the back left thruster, which was showing signs of underperformance at recent testings. We left for Wauburg around 12:30, and arrived around 1. The new water cooling loop was a great success and kept the computer much cooler throughout testing. Likewise, replacing the back left thruster prevented the boat from drifting left when attempting to go straight. We also made some changes to NaviGator's path planner that resulted in the boat maintaining its position much better! Several of the items we hoped to test today, such as the ball launcher, light tower task element, and hydrophones were not available to be tested in the water and therefore, we will have to test them at a later time, likely during this week before testing. We tested the demonstration task again, and entrance/exit gates before we had to pack up."
+          />
+
+          <TimelineItem 
+            date="October 23rd, 2024" 
+            title="Testing Log 9: Initial Drone Testing and Sensor Debugging"
+            description="We left for Lake Wauburg a little bit later today. We began by investigating an issue where the point cloud-based object detection system sometimes refuses to launch, but we were unable to find what was causing it. We then moved onto fixing the GPS, which suddenly started disconnecting after the last testing session. Forrest kindly helped us debug what could be the issue, and we found that a vim setting was likely causing the computer to experience CPU exhaustion, preventing the GPS Kalman Filter from working correctly. We then put the hydrophones on the boat for the first time (after struggling to find an allen key lol). We saw that they were hearing pings, but we didn't have enough time to fix the pinger position solver node, so we will need to do that at the pool or a future testing session. We speedily packed up today as well, packing up the trailer and truck completely in ~30 minutes between 4 people. Regarding the drone, Keith met with Dominik today to learn about the progress of the drone. The drone was able to autonomously take off, move a certain distance, and land. The drone was also able to recognize QR codes and use them for landing. They also developed a basic protocol idea for boat-drone communication, which we will attempt to begin developing before Sunday."
+          />
           
           <TimelineItem 
             date="Until November 2024" 
             title="More Testing" 
-            description="As of October 1st, 2024 this is all of the testing we've done, but we have many more sessions planned, and will update the website when we do them!"
+            description="As of now, this is all of the testing we've done, but we have many more sessions planned, and will update the website when we do them!"
           />
         </div>
       </section>

@@ -119,12 +119,14 @@ const Advisors = () => {
       name: "Dr. Eric Schwartz",
       role: "MIL Director",
       linkedIn: "eric-schwartz-4231924",
+      website: "https://mil.ufl.edu/ems/"
     },
     {
       image: advisorImages["crane.jpg"],
       name: "Dr. Carl Crane",
       role: "Professor, MAE",
-      linkedIn: "carl-crane-47839574"
+      linkedIn: "carl-crane-47839574",
+      website: "https://mae.ufl.edu/people/profiles/carl-crane/"
     },
     {
       image: advisorImages["andres.png"],
@@ -156,8 +158,8 @@ const Advisors = () => {
   );
 };
 
-const TravellingMembers = () => {
-  const travellingMembers = [
+const TravelingMembers = () => {
+  const travelingMembers = [
     {
       image: memberImages["alex.png"],
       name: "Alex Johnson",
@@ -203,10 +205,10 @@ const TravellingMembers = () => {
   return (
     <section className="max-w-6xl mx-auto pb-16 bg-gray-300">
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold mb-10">Travelling Members</h2>
+        <h2 className="text-3xl font-bold mb-10">Traveling Members</h2>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-        {travellingMembers.map((member, index) => (
+        {travelingMembers.map((member, index) => (
           <MemberCard
             key={index}
             image={member.image}
@@ -281,7 +283,7 @@ const TeamList = () => {
           <div key={index} className="bg-white p-4 rounded-lg shadow-lg text-center">
             <h3 className="text-xl font-bold mb-3">{team.name}</h3>
             <div className="space-y-1">
-              {team.members.map((member, idx) => (
+              {team.members.toSorted().map((member, idx) => (
                 <p key={idx} className="text-gray-700">{member}</p>
               ))}
             </div>
@@ -300,7 +302,7 @@ const TeamPage = () => {
       </div>
       <Leadership />
       <Advisors />
-      <TravellingMembers />
+      <TravelingMembers />
       <TeamList />
     </div>
   );
