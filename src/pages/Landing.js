@@ -1,8 +1,9 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
+import { NavLink } from 'react-router-dom';
 
 import background from '../assets/hawaii_resting.jpg';
-import teamPhoto from '../assets/robotx_2022_team_1.jpg';
+import teamPhoto from '../assets/team_2024.jpg';
 
 function Header() {
   return (
@@ -13,7 +14,10 @@ function Header() {
       <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
         <h1 className="text-7xl font-bold">NaviGator</h1>
         <p className="text-2xl mt-2">UF's Autonomous Maritime System</p>
-        <a href="#vehicle" className="mt-6 px-6 py-3 bg-gray-200 rounded-full text-black font-light hover:text-white hover:bg-opacity-30 hover:border transition-all duration-300">Learn More</a>
+
+      <NavLink 
+        to="/vehicle"
+        className="mt-6 px-6 py-3 bg-gray-200 rounded-full text-black font-light hover:text-white hover:bg-opacity-30 hover:border transition-all duration-300">Learn More</NavLink>
       </div>
     </header>
   );
