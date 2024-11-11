@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "../components/Header";
+import Header from "../../components/Header";
 
-import MemberCard from "../components/MemberCard";
+import MemberCard from "../../components/MemberCard";
 
-import memberImages from "../assets/members";
-import advisorImages from "../assets/advisors";
+import memberImages from "../../assets/members";
+import advisorImages from "../../assets/advisors";
 
 const Leadership = () => {
   const members = [

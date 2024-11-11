@@ -67,10 +67,19 @@ function Navbar() {
       </div>
       <ul className="flex space-x-6">
         <NavItem to="/" label="Home" />
-        <NavItem to="/team" label="Team" />
+        <NavItem 
+          to="/team"
+          label="Team"
+          dropdown={
+            [
+              { to: "/team", label: "2024 Team" },
+              { to: "/team/2022", label: "2022 Team" },
+            ]
+          }
+        />
         <NavItem 
           to="/vehicle" 
-          label="Vehicle" 
+          label="Vehicle"
         />
         <NavItem 
           to="/sponsors" 
