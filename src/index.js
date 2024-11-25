@@ -14,6 +14,7 @@ import Team2024Page from './pages/teams/2024';
 import VehiclePage from './pages/Vehicle';
 import SponsorsPage from './pages/Sponsors';
 import PhotosPage from './pages/Photos';
+import PublicationsPage from './pages/Publications.js'
 
 import Navbar from "./components/Navbar.js";
 
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
   {
     path: "/photos",
     element: <PhotosPage />,
+  },
+  {
+    path: "/publications",
+    element: <PublicationsPage />,
   },
 ], {
 });
