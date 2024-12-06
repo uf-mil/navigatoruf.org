@@ -74,6 +74,7 @@ function Navbar() {
             [
               { to: "/team", label: "2024 Team" },
               { to: "/team/2022", label: "2022 Team" },
+              { to: "/team/2018", label: "2018 Team" },
             ]
           }
         />
