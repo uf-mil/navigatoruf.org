@@ -87,6 +87,7 @@ function Navbar() {
           label="Sponsors" 
         />
         <NavItem to="/photos" label="Photos" />
+        <NavItem to="/publications" label="Publications" />
       </ul>
     </nav>
   );
